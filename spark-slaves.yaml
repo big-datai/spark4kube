@@ -1,0 +1,25 @@
+kind: ReplicationController
+apiVersion: v1
+metadata:
+  name: spark-slave
+spec:
+  replicas: 3
+  selector:
+    component: spark-slave
+  template:
+    metadata:
+      labels:
+        component: spark-slave
+    spec:
+      containers:
+        - name: spark-slave
+          image: spark
+          args: ["/root/slaves.sh"]
+          ports:
+            - containerPort: 7077
+            - containerPort: 8080
+            - containerPort: 4040
+            - containerPort: 8081
+          resources:
+            requests:
+              cpu: 100m
