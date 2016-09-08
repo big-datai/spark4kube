@@ -13,8 +13,8 @@ spec:
     spec:
       containers:
         - name: spark-master
-          image: dpavlov/spark
-          args: ["/root/master.sh"]
+          image: dpavlov/spark:latest
+          args: ["/usr/share/master.sh"]
           ports:
             - containerPort: 7077
             - containerPort: 8080

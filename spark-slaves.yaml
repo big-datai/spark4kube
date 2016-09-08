@@ -13,8 +13,8 @@ spec:
     spec:
       containers:
         - name: spark-slave
-          image: spark
-          args: ["/root/slaves.sh"]
+          image: dpavlov/spark:latest
+          args: ["/usr/share/slaves.sh"]
           ports:
             - containerPort: 7077
             - containerPort: 8080
