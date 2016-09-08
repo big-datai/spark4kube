@@ -1,10 +1,12 @@
 FROM centos:latest
 USER root
 WORKDIR /usr/share/
-ADD master.sh /root/
-ADD slaves.sh /root/
+ADD master.sh /usr/share/
+ADD slaves.sh /usr/share/
+ADD slaves_local.sh /usr/share/
 RUN cd /usr/share/
 RUN yum update -y
+RUN yum install -y vim
 RUN yum install -y yum-utils && yum clean all
 RUN yum install -y zsh
 RUN yum install -y wget
