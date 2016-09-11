@@ -1,9 +1,13 @@
 #This is a kuberenetes docker image that runs spark and slaves on kube, each instance is a pod.
-#Installation instractions:
-Kube running instractions. Download kube-deploy, from: https://github.com/kubernetes/kube-deploy.git and install docker on each instance of you linux server.
-
-
-cd spark4kube 
+##Installation instractions:
+Download kube-deploy: 
+1. git clone https://github.com/kubernetes/kube-deploy.git
+2. Install docker on each instance of you linux server, make sure it is the same version of docker and it is the same version kubernetes was tested on to avoid strange issues.
+3. Download spark4kube: git clone https://github.com/2dmitrypavlov/spark4kube.git
+4. cd kube-deploy
+5. Run ./master.sh or follow kube-deploy instractions to start kubernetes, after a minute make sure it is running, by going to dashboard or running kubectl get svc/pods.
+6. cd spark4kube 
+7. Run: sh README.md it should start all the scripts, or as alternative run line by line:
 #Create master instance
 kubectl create -f spark-master.yaml 
 #Create two services so workers can find the master and you can access the gui
