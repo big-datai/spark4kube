@@ -4,6 +4,7 @@ WORKDIR /usr/share/
 ADD master.sh /usr/share/
 ADD slaves.sh /usr/share/
 ADD slaves_local.sh /usr/share/
+ADD zeppelin.sh /usr/share/
 RUN cd /usr/share/
 RUN yum update -y
 RUN yum install -y vim
@@ -15,6 +16,7 @@ RUN tar -zxvf spark-2.0.0-bin-hadoop2.7.tgz
 RUN mv spark-2.0.0-bin-hadoop2.7 spark
 RUN yum install -y java-1.8.0-openjdk-devel.x86_64
 ENV PATH $PATH:/usr/share/spark/bin
+
 
 # quiet the logging
 #RUN sed -i 's/log4j.rootCategory=.*/log4j.rootCategory=WARN, console/' \

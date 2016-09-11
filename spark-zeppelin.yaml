@@ -1,0 +1,22 @@
+kind: ReplicationController
+apiVersion: v1
+metadata:
+  name: spark-zeppelin
+spec:
+  replicas: 1
+  selector:
+    component: spark-zeppelin
+  template:
+    metadata:
+      labels:
+        component: spark-zeppelin
+    spec:
+      containers:
+        - name: spark-zeppelin
+          image: dpavlov/spark:latest
+          args: ["/usr/share/zeppelin.sh"]
+          ports:
+            - containerPort: 9995
+          resources:
+            requests:
+              cpu: 100m

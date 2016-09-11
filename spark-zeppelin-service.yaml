@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: spark-zeppelin
+  namespace: default 
+spec:
+  ports:
+    - port: 9995
+      targetPort: 9995
+  selector:
+    component: spark-zeppelin
