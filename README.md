@@ -7,7 +7,7 @@ Download kube-deploy:
 4. cd kube-deploy  
 5. Run ./master.sh or follow kube-deploy instractions to start kubernetes, after a minute make sure it is running, by going to dashboard http://<server ip - host >:8080/api/v1/proxy/namespaces/kube-system/services/kubernetes-dashboard/#/workload:  
 6. you should see something like that:  
-![Screenshot](dashboard-start.png)  
+![Screenshot](images/dashboard-start.png)  
 7. or run from command line:  
 kubectl get svc/pods:   
 ➜  ~ kubectl get svc    
@@ -47,13 +47,13 @@ kubernetes     10.0.0.1     <none>        443/TCP    2d
 spark-master   10.0.0.207   <none>        7077/TCP   1m  
 ####spark-webui    10.0.0.77    <none>        8080/TCP   23s  
 Go to http://server-ip:8080/api/v1/proxy/namespaces/default/services/spark-webui/ and make sure spark Master is ready:    
-![Screenshot](dashboard-master.png)  
+![Screenshot](images/dashboard-master.png)  
 ##Run slaves, to change number os slaves open spark-slaves.yaml script and change number of  "replicas: 3" to any number you need. Each worker runs on separate pod.  
 ➜  spark4kube git:(master) kubectl create -f spark-slaves.yaml  
 replicationcontroller "spark-slave" created   
-![Screenshot](dashboard.png)  
+![Screenshot](images/dashboard.png)  
 You can go back to spark master and see that workers are attached.
-![Screenshot](dashboard-workers.png)  
+![Screenshot](images/dashboard-workers.png)  
 #Version update instractions:  
 To change spark version just go to docker folder and opent Dockerfile -> change   
 RUN wget http://d3kbcqa49mib13.cloudfront.net/spark-2.0.0-bin-hadoop2.7.tgz to a new binary pre compiled spark version, and replace all apperance of "spark-2.0.0-bin-hadoop2.7" with new version file new name.  
