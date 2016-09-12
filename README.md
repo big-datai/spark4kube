@@ -49,7 +49,8 @@ spark-webui    10.0.0.77    <none>        8080/TCP   23s
 ```
 Go to http://server-ip:8080/api/v1/proxy/namespaces/default/services/spark-webui/ and make sure spark Master is ready:    
 ![Screenshot](images/dashboard-master.png)  
-##Run slaves, to change number os slaves open spark-slaves.yaml script and change number of  "replicas: 3" to any number you need. Each worker runs on separate pod.  
+##Run slaves:
+Run slaves, to change number os slaves open spark-slaves.yaml script and change number of  "replicas: 3" to any number you need. Each worker runs on separate pod.  
 ```sh
 ➜  spark4kube git:(master) kubectl create -f spark-slaves.yaml  
 replicationcontroller "spark-slave" created   
