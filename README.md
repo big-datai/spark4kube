@@ -58,7 +58,9 @@ You can go back to spark master and see that workers are attached.
 #Zeppelin - you can access spark cluster with zeppelin notebooks:  
 http://server-ip:8080/api/v1/proxy/namespaces/default/services/spark-zeppelin/  
 To save zeppelin notebooks to zeppelinhub.com you will need to export ZEPPELINHUB_API_TOKEN="you token" and restart zeppelin.
-Run private file set_zeppelin.sh it will do the job.
+Run private file set_zeppelin.sh it will do the job 15 minutes after you start zeppelin manually, or just run star-all.sh
+
+
 #Version update instractions:  
 To change spark version just go to docker folder and opent Dockerfile -> change   
 RUN wget http://d3kbcqa49mib13.cloudfront.net/spark-2.0.0-bin-hadoop2.7.tgz to a new binary pre compiled spark version, and replace all apperance of "spark-2.0.0-bin-hadoop2.7" with new version file new name.  
