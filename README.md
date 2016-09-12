@@ -36,8 +36,6 @@ Make sure service is running:
 NAME           CLUSTER-IP   EXTERNAL-IP   PORT(S)    AGE  
 kubernetes     10.0.0.1     <none>        443/TCP    2d  
 spark-master   10.0.0.207   <none>        7077/TCP   7s  
-➜  spark4kube git:(master) 
-
 ➜  spark4kube git:(master) kubectl create -f spark-webui-service.yaml 
 service "spark-webui" created
 ```
