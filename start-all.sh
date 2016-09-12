@@ -14,3 +14,6 @@ kubectl create -f spark-slaves.yaml
 kubectl create -f spark-zeppelin.yaml 
 #start zeppelin service
 kubectl create -f spark-zeppelin-service.yaml
+
+sleep 15m
+./set_zeppelin.sh
