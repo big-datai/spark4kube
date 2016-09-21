@@ -6,6 +6,7 @@ ADD slaves.sh /usr/share/
 ADD slaves_local.sh /usr/share/
 ADD zeppelin.sh /usr/share/
 RUN cd /usr/share/
+RUN export TERM=xterm
 RUN yum update -y
 RUN yum install -y vim
 RUN yum install -y yum-utils && yum clean all
