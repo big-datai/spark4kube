@@ -1,11 +1,11 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: spark-jupyter
+  name: spark-jupyter2
   namespace: default 
 spec:
   ports:
     - port: 9999
       targetPort: 9999
   selector:
-    component: spark-jupyter
+    component: spark-jupyter2

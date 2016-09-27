@@ -1,20 +1,20 @@
 kind: ReplicationController
 apiVersion: v1
 metadata:
-  name: spark-jupyter
+  name: spark-jupyter2
 spec:
   replicas: 1
   selector:
-    component: spark-jupyter
+    component: spark-jupyter2
   template:
     metadata:
       labels:
-        component: spark-jupyter
+        component: spark-jupyter2
     spec:
       containers:
-        - name: spark-jupyter
+        - name: spark-jupyter2
           image: dpavlov/spark:latest
-          args: ["/bin/bash","-c","sleep 30000000"]
+          args: ["/usr/share/jupyter.sh"]
           ports:
             - containerPort: 9999
           resources:
