@@ -64,6 +64,13 @@ http://server-ip:8080/api/v1/proxy/namespaces/default/services/spark-zeppelin/
 To save zeppelin notebooks to zeppelinhub.com you will need to export ZEPPELINHUB_API_TOKEN="you token" and restart zeppelin.
 Run private file set_zeppelin.sh it will do the job 15 minutes after you start zeppelin manually, or just run star-all.sh
 
+#Jupyter - you can start jupyter notebook configured to the cluster with spark-jupyter.yaml  
+just run:  
+kubectl create -f spark-jupyter.yaml  
+then find the docker container on which host it is running and on that host do:  
+iptables -t nat -A DOCKER -p tcp --dport 9999 -j DNAT --to-destination 10.1.65.4:9999
+10.1.65.4 - container ip address. to access Jupyter go to  
+https://hostname:9999/tree  
 
 #Version update instractions:  
 To change spark version just go to docker folder and opent Dockerfile -> change   
