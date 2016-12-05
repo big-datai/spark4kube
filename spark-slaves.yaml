@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: spark-slave
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     component: spark-slave
   template:

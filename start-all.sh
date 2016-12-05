@@ -7,7 +7,7 @@ echo "Create two services so workers can find the master and you can access the 
 kubectl create -f spark-master-service.yaml  
 kubectl create -f spark-webui-service.yaml  
 echo "Validate that service is available on "  
-echo $(http://$(hostname -i):8080/api/v1/proxy/namespaces/default/services/spark-webui/)
+#echo $(http://$(hostname -i):8080/api/v1/proxy/namespaces/default/services/spark-webui/)
 #Run slaves, to change number os slaves open spark-slaves.yaml script and change number of pods from 3 to any number.  
 kubectl create -f spark-slaves.yaml 
 #Start zeppelin - it can take a few minutes to download zeppelin
@@ -15,5 +15,5 @@ kubectl create -f spark-zeppelin.yaml
 #start zeppelin service
 kubectl create -f spark-zeppelin-service.yaml
 
-sleep 15m
-./set_zeppelin.sh
+#sleep 15m
+#./set_zeppelin.sh
