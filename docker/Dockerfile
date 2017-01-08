@@ -4,6 +4,7 @@ USER root
 WORKDIR /usr/share/
 ADD master.sh /usr/share/
 ADD slaves.sh /usr/share/
+ADD RedshiftJDBC4-1.1.17.1017.jar /usr/share/
 ADD ojdbc7.jar /usr/share/
 ADD slaves_local.sh /usr/share/
 ADD zeppelin.sh /usr/share/
@@ -35,9 +36,9 @@ RUN /bin/bash ~/anaconda.sh -b -p /opt/conda && \
     rm ~/anaconda.sh
 RUN cd /usr/share/
 RUN pwd
-RUN wget http://d3kbcqa49mib13.cloudfront.net/spark-2.0.2-bin-hadoop2.7.tgz
-RUN tar -zxvf spark-2.0.2-bin-hadoop2.7.tgz
-RUN mv spark-2.0.2-bin-hadoop2.7 spark
+RUN wget http://d3kbcqa49mib13.cloudfront.net/spark-2.1.0-bin-hadoop2.7.tgz
+RUN tar -zxvf spark-2.1.0-bin-hadoop2.7.tgz
+RUN mv spark-2.1.0-bin-hadoop2.7 spark
 RUN yum install -y java-1.8.0-openjdk-devel.x86_64
 ENV PATH $PATH:/usr/share/spark/bin:/opt/conda/bin/
 
