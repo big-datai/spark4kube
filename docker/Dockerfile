@@ -41,6 +41,7 @@ RUN wget http://d3kbcqa49mib13.cloudfront.net/spark-2.1.0-bin-hadoop2.7.tgz
 RUN tar -zxvf spark-2.1.0-bin-hadoop2.7.tgz
 RUN mv spark-2.1.0-bin-hadoop2.7 spark
 RUN yum install -y java-1.8.0-openjdk-devel.x86_64
+RUN yum install net-tools -y
 ENV PATH $PATH:/usr/share/spark/bin:/opt/conda/bin/
 
 #RUN sh /usr/share/jupyter.sh
