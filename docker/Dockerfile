@@ -23,11 +23,11 @@ RUN yum install -y yum-utils
 RUN yum install -y zsh
 RUN yum install -y wget bzip2
 RUN yum install openssl.x86_64 -y
+RUN wget https://github.com/s3tools/s3cmd/archive/master.zip
 RUN wget http://central.maven.org/maven2/com/amazonaws/aws-java-sdk/1.7.4/aws-java-sdk-1.7.4.jar
 RUN wget http://central.maven.org/maven2/org/apache/hadoop/hadoop-aws/2.7.1/hadoop-aws-2.7.1.jar
 RUN wget http://central.maven.org/maven2/org/apache/hadoop/hadoop-aws/2.6.0/hadoop-aws-2.6.0.jar
 RUN wget http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.39/mysql-connector-java-5.1.39.jar
-RUN wget https://github.com/s3tools/s3cmd/archive/master.zip
 RUN wget http://central.maven.org/maven2/com/databricks/spark-redshift_2.11/2.0.1/spark-redshift_2.11-2.0.1.jar
 RUN wget http://central.maven.org/maven2/org/postgresql/postgresql/9.4-1201-jdbc41/postgresql-9.4-1201-jdbc41.jar
 RUN wget http://central.maven.org/maven2/com/eclipsesource/minimal-json/minimal-json/0.9.4/minimal-json-0.9.4.jar
@@ -37,9 +37,9 @@ RUN /bin/bash ~/anaconda.sh -b -p /opt/conda && \
     rm ~/anaconda.sh
 RUN cd /usr/share/
 RUN pwd
-RUN wget http://d3kbcqa49mib13.cloudfront.net/spark-2.1.0-bin-hadoop2.7.tgz
-RUN tar -zxvf spark-2.1.0-bin-hadoop2.7.tgz
-RUN mv spark-2.1.0-bin-hadoop2.7 spark
+RUN wget http://d3kbcqa49mib13.cloudfront.net/spark-2.0.2-bin-hadoop2.7.tgz
+RUN tar -zxvf spark-2.0.2-bin-hadoop2.7.tgz
+RUN mv spark-2.0.2-bin-hadoop2.7 spark
 RUN yum install -y java-1.8.0-openjdk-devel.x86_64
 RUN yum install net-tools -y
 ENV PATH $PATH:/usr/share/spark/bin:/opt/conda/bin/
