@@ -4,6 +4,8 @@ USER root
 WORKDIR /usr/share/
 ADD master.sh /usr/share/
 ADD slaves.sh /usr/share/
+ADD master_dns.sh /usr/share/
+ADD slaves_dns.sh /usr/share/
 ADD .ivy2 /root/
 ADD RedshiftJDBC4-1.1.17.1017.jar /usr/share/
 ADD ojdbc7.jar /usr/share/
@@ -20,6 +22,7 @@ RUN export TERM=xterm
 RUN yum clean all -y
 RUN yum update -y
 RUN yum install -y vim
+RUN yum install -y bind-utils 
 RUN yum install -y yum-utils
 RUN yum install -y zsh
 RUN yum install -y wget bzip2
