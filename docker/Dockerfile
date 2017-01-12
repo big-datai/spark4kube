@@ -2,7 +2,6 @@ FROM centos:latest
 MAINTAINER 2dmitrypavlov@gmail.com
 USER root
 WORKDIR /usr/share/
-ADD postgresql-9.4-1201-jdbc41.jar /usr/share/
 ADD master.sh /usr/share/
 ADD slaves.sh /usr/share/
 ADD .ivy2 /root/
