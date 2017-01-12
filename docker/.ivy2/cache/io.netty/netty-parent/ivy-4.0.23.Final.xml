@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
+	<info organisation="io.netty"
+		module="netty-parent"
+		revision="4.0.23.Final"
+		status="release"
+		publication="20140815180240"
+	>
+		<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0" />
+		<description homepage="http://netty.io/">
+		Netty is an asynchronous event-driven network application framework for 
+    rapid development of maintainable high performance protocol servers and
+    clients.
+		</description>
+		<m:properties__argLine.coverage>-D_</m:properties__argLine.coverage>
+		<m:properties__jetty.npn.path>${settings.localRepository}/org/mortbay/jetty/npn/npn-boot/${jetty.npn.version}/npn-boot-${jetty.npn.version}.jar</m:properties__jetty.npn.path>
+		<m:properties__argLine.common>
+      -server
+      -dsa -da -ea:io.netty...
+      -XX:+AggressiveOpts
+      -XX:+TieredCompilation
+      -XX:+UseBiasedLocking
+      -XX:+UseFastAccessorMethods
+      -XX:+OptimizeStringConcat
+      -XX:+HeapDumpOnOutOfMemoryError
+    </m:properties__argLine.common>
+		<m:properties__jetty.npn.version>1.1.7.v20140316</m:properties__jetty.npn.version>
+		<m:properties__argLine.leak>-verbose:gc</m:properties__argLine.leak>
+		<m:properties__project.build.sourceEncoding>UTF-8</m:properties__project.build.sourceEncoding>
+		<m:properties__argLine.bootcp>-Xbootclasspath/p:${jetty.npn.path}</m:properties__argLine.bootcp>
+		<m:properties__project.reporting.outputEncoding>UTF-8</m:properties__project.reporting.outputEncoding>
+		<m:properties__jboss.marshalling.version>1.3.18.GA</m:properties__jboss.marshalling.version>
+		<m:properties__sonatypeOssDistMgmtSnapshotsUrl>https://oss.sonatype.org/content/repositories/snapshots/</m:properties__sonatypeOssDistMgmtSnapshotsUrl>
+		<m:properties__arguments/>
+		<m:maven.plugins>org.apache.maven.plugins__maven-enforcer-plugin__1.2|org.apache.maven.plugins__maven-enforcer-plugin__1.2|null__maven-enforcer-plugin__null|null__maven-compiler-plugin__3.1|org.codehaus.mojo__animal-sniffer-maven-plugin__1.9|null__maven-checkstyle-plugin__2.10|null__maven-dependency-plugin__null|null__maven-surefire-plugin__null|org.apache.felix__maven-bundle-plugin__2.4.0|null__maven-source-plugin__2.2.1|null__maven-javadoc-plugin__2.9.1|null__maven-deploy-plugin__2.7|null__maven-release-plugin__2.4.2|null__maven-antrun-plugin__null</m:maven.plugins>
+		<m:dependency.management__org.javassist__javassist__version>3.18.0-GA</m:dependency.management__org.javassist__javassist__version>
+		<m:dependency.management__org.javassist__javassist__scope>compile</m:dependency.management__org.javassist__javassist__scope>
+		<m:dependency.management__org.jboss.marshalling__jboss-marshalling__version>1.3.18.GA</m:dependency.management__org.jboss.marshalling__jboss-marshalling__version>
+		<m:dependency.management__org.jboss.marshalling__jboss-marshalling__scope>compile</m:dependency.management__org.jboss.marshalling__jboss-marshalling__scope>
+		<m:dependency.management__org.eclipse.jetty.npn__npn-api__version>1.1.0.v20120525</m:dependency.management__org.eclipse.jetty.npn__npn-api__version>
+		<m:dependency.management__org.mortbay.jetty.npn__npn-boot__version>1.1.7.v20140316</m:dependency.management__org.mortbay.jetty.npn__npn-boot__version>
+		<m:dependency.management__com.google.protobuf__protobuf-java__version>2.5.0</m:dependency.management__com.google.protobuf__protobuf-java__version>
+		<m:dependency.management__io.netty__netty-tcnative__version>1.1.30.Fork2</m:dependency.management__io.netty__netty-tcnative__version>
+		<m:dependency.management__io.netty__netty-tcnative__scope>compile</m:dependency.management__io.netty__netty-tcnative__scope>
+		<m:dependency.management__org.bouncycastle__bcpkix-jdk15on__version>1.50</m:dependency.management__org.bouncycastle__bcpkix-jdk15on__version>
+		<m:dependency.management__org.bouncycastle__bcpkix-jdk15on__scope>compile</m:dependency.management__org.bouncycastle__bcpkix-jdk15on__scope>
+		<m:dependency.management__com.jcraft__jzlib__version>1.1.2</m:dependency.management__com.jcraft__jzlib__version>
+		<m:dependency.management__org.rxtx__rxtx__version>2.1.7</m:dependency.management__org.rxtx__rxtx__version>
+		<m:dependency.management__com.barchart.udt__barchart-udt-bundle__version>2.3.0</m:dependency.management__com.barchart.udt__barchart-udt-bundle__version>
+		<m:dependency.management__javax.servlet__servlet-api__version>2.5</m:dependency.management__javax.servlet__servlet-api__version>
+		<m:dependency.management__org.slf4j__slf4j-api__version>1.7.5</m:dependency.management__org.slf4j__slf4j-api__version>
+		<m:dependency.management__commons-logging__commons-logging__version>1.1.3</m:dependency.management__commons-logging__commons-logging__version>
+		<m:dependency.management__log4j__log4j__version>1.2.17</m:dependency.management__log4j__log4j__version>
+		<m:dependency.management__log4j__log4j__exclusion_0>javax.mail__mail</m:dependency.management__log4j__log4j__exclusion_0>
+		<m:dependency.management__log4j__log4j__exclusion_1>javax.jms__jms</m:dependency.management__log4j__log4j__exclusion_1>
+		<m:dependency.management__log4j__log4j__exclusion_2>com.sun.jdmk__jmxtools</m:dependency.management__log4j__log4j__exclusion_2>
+		<m:dependency.management__log4j__log4j__exclusion_3>com.sun.jmx__jmxri</m:dependency.management__log4j__log4j__exclusion_3>
+		<m:dependency.management__com.yammer.metrics__metrics-core__version>2.2.0</m:dependency.management__com.yammer.metrics__metrics-core__version>
+		<m:dependency.management__junit__junit__version>4.11</m:dependency.management__junit__junit__version>
+		<m:dependency.management__junit__junit__scope>test</m:dependency.management__junit__junit__scope>
+		<m:dependency.management__org.easymock__easymock__version>3.2</m:dependency.management__org.easymock__easymock__version>
+		<m:dependency.management__org.easymock__easymock__scope>test</m:dependency.management__org.easymock__easymock__scope>
+		<m:dependency.management__org.easymock__easymockclassextension__version>3.2</m:dependency.management__org.easymock__easymockclassextension__version>
+		<m:dependency.management__org.easymock__easymockclassextension__scope>test</m:dependency.management__org.easymock__easymockclassextension__scope>
+		<m:dependency.management__org.jmock__jmock-junit4__version>2.6.0</m:dependency.management__org.jmock__jmock-junit4__version>
+		<m:dependency.management__org.jmock__jmock-junit4__scope>test</m:dependency.management__org.jmock__jmock-junit4__scope>
+		<m:dependency.management__ch.qos.logback__logback-classic__version>1.0.13</m:dependency.management__ch.qos.logback__logback-classic__version>
+		<m:dependency.management__ch.qos.logback__logback-classic__scope>test</m:dependency.management__ch.qos.logback__logback-classic__scope>
+		<m:dependency.management__org.jboss.marshalling__jboss-marshalling-serial__version>1.3.18.GA</m:dependency.management__org.jboss.marshalling__jboss-marshalling-serial__version>
+		<m:dependency.management__org.jboss.marshalling__jboss-marshalling-serial__scope>test</m:dependency.management__org.jboss.marshalling__jboss-marshalling-serial__scope>
+		<m:dependency.management__org.jboss.marshalling__jboss-marshalling-river__version>1.3.18.GA</m:dependency.management__org.jboss.marshalling__jboss-marshalling-river__version>
+		<m:dependency.management__org.jboss.marshalling__jboss-marshalling-river__scope>test</m:dependency.management__org.jboss.marshalling__jboss-marshalling-river__scope>
+		<m:dependency.management__com.google.caliper__caliper__version>0.5-rc1</m:dependency.management__com.google.caliper__caliper__version>
+		<m:dependency.management__com.google.caliper__caliper__scope>test</m:dependency.management__com.google.caliper__caliper__scope>
+	</info>
+	<configurations>
+		<conf name="default" visibility="public" description="runtime dependencies and master artifact can be used with this conf" extends="runtime,master"/>
+		<conf name="master" visibility="public" description="contains only the artifact published by this module itself, with no transitive dependencies"/>
+		<conf name="compile" visibility="public" description="this is the default scope, used if none is specified. Compile dependencies are available in all classpaths."/>
+		<conf name="provided" visibility="public" description="this is much like compile, but indicates you expect the JDK or a container to provide it. It is only available on the compilation classpath, and is not transitive."/>
+		<conf name="runtime" visibility="public" description="this scope indicates that the dependency is not required for compilation, but is for execution. It is in the runtime and test classpaths, but not the compile classpath." extends="compile"/>
+		<conf name="test" visibility="private" description="this scope indicates that the dependency is not required for normal use of the application, and is only available for the test compilation and execution phases." extends="runtime"/>
+		<conf name="system" visibility="public" description="this scope is similar to provided except that you have to provide the JAR which contains it explicitly. The artifact is always available and is not looked up in a repository."/>
+		<conf name="sources" visibility="public" description="this configuration contains the source artifact of this module, if any."/>
+		<conf name="javadoc" visibility="public" description="this configuration contains the javadoc artifact of this module, if any."/>
+		<conf name="optional" visibility="public" description="contains all optional dependencies"/>
+	</configurations>
+	<publications>
+	</publications>
+	<dependencies>
+		<dependency org="org.javassist" name="javassist" rev="3.18.0-GA" force="true" conf="test->runtime(*),master(*)"/>
+		<dependency org="junit" name="junit" rev="4.11" force="true" conf="test->runtime(*),master(*)"/>
+		<dependency org="org.easymock" name="easymock" rev="3.2" force="true" conf="test->runtime(*),master(*)"/>
+		<dependency org="org.easymock" name="easymockclassextension" rev="3.2" force="true" conf="test->runtime(*),master(*)"/>
+		<dependency org="org.jmock" name="jmock-junit4" rev="2.6.0" force="true" conf="test->runtime(*),master(*)"/>
+		<dependency org="ch.qos.logback" name="logback-classic" rev="1.0.13" force="true" conf="test->runtime(*),master(*)"/>
+		<override org="org.javassist" module="javassist" matcher="exact" rev="3.18.0-GA"/>
+		<override org="org.jboss.marshalling" module="jboss-marshalling" matcher="exact" rev="1.3.18.GA"/>
+		<override org="org.eclipse.jetty.npn" module="npn-api" matcher="exact" rev="1.1.0.v20120525"/>
+		<override org="org.mortbay.jetty.npn" module="npn-boot" matcher="exact" rev="1.1.7.v20140316"/>
+		<override org="com.google.protobuf" module="protobuf-java" matcher="exact" rev="2.5.0"/>
+		<override org="io.netty" module="netty-tcnative" matcher="exact" rev="1.1.30.Fork2"/>
+		<override org="org.bouncycastle" module="bcpkix-jdk15on" matcher="exact" rev="1.50"/>
+		<override org="com.jcraft" module="jzlib" matcher="exact" rev="1.1.2"/>
+		<override org="org.rxtx" module="rxtx" matcher="exact" rev="2.1.7"/>
+		<override org="com.barchart.udt" module="barchart-udt-bundle" matcher="exact" rev="2.3.0"/>
+		<override org="javax.servlet" module="servlet-api" matcher="exact" rev="2.5"/>
+		<override org="org.slf4j" module="slf4j-api" matcher="exact" rev="1.7.5"/>
+		<override org="commons-logging" module="commons-logging" matcher="exact" rev="1.1.3"/>
+		<override org="log4j" module="log4j" matcher="exact" rev="1.2.17"/>
+		<override org="com.yammer.metrics" module="metrics-core" matcher="exact" rev="2.2.0"/>
+		<override org="junit" module="junit" matcher="exact" rev="4.11"/>
+		<override org="org.easymock" module="easymock" matcher="exact" rev="3.2"/>
+		<override org="org.easymock" module="easymockclassextension" matcher="exact" rev="3.2"/>
+		<override org="org.jmock" module="jmock-junit4" matcher="exact" rev="2.6.0"/>
+		<override org="ch.qos.logback" module="logback-classic" matcher="exact" rev="1.0.13"/>
+		<override org="org.jboss.marshalling" module="jboss-marshalling-serial" matcher="exact" rev="1.3.18.GA"/>
+		<override org="org.jboss.marshalling" module="jboss-marshalling-river" matcher="exact" rev="1.3.18.GA"/>
+		<override org="com.google.caliper" module="caliper" matcher="exact" rev="0.5-rc1"/>
+	</dependencies>
+</ivy-module>
