@@ -47,7 +47,7 @@ RUN mv spark-2.0.2-bin-hadoop2.7 spark
 RUN yum install -y java-1.8.0-openjdk-devel.x86_64
 RUN yum install net-tools -y
 ENV PATH $PATH:/usr/share/spark/bin:/opt/conda/bin/
-
+ADD log4j.properties /usr/share/spark/conf/
 #RUN sh /usr/share/jupyter.sh
 # quiet the logging
 #RUN sed -i 's/log4j.rootCategory=.*/log4j.rootCategory=WARN, console/' \
