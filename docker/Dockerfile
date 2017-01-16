@@ -25,7 +25,7 @@ RUN yum install -y vim
 RUN yum install -y bind-utils 
 RUN yum install -y yum-utils
 RUN yum install -y zsh
-RUN yum install -y wget bzip2
+RUN yum install -y wget bzip2 git
 RUN yum install openssl.x86_64 -y
 RUN wget https://github.com/s3tools/s3cmd/archive/master.zip
 RUN wget http://central.maven.org/maven2/com/amazonaws/aws-java-sdk/1.7.4/aws-java-sdk-1.7.4.jar
