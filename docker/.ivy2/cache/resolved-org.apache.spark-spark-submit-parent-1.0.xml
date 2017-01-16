@@ -4,7 +4,7 @@
 		module="spark-submit-parent"
 		revision="1.0"
 		status="release"
-		publication="20170112144626"
+		publication="20170116215458"
 		default="true"
 	/>
 	<configurations>
@@ -14,7 +14,6 @@
 		<artifact name="spark-submit-parent" type="jar" ext="jar" conf="default"/>
 	</publications>
 	<dependencies>
-		<dependency org="org.apache.hadoop" name="hadoop-client" rev="2.7.1" conf="default->default(runtime)"/>
 		<dependency org="org.apache.hadoop" name="hadoop-aws" rev="2.7.1" conf="default->default(runtime)"/>
 		<dependency org="com.databricks" name="spark-redshift_2.11" rev="2.0.1" conf="default->default(runtime)"/>
 		<exclude org="*" module="scala-library" artifact="*" type="*" ext="*" matcher="glob"/>
