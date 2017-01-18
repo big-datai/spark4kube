@@ -8,6 +8,7 @@ ADD master_dns.sh /usr/share/
 ADD slaves_dns.sh /usr/share/
 ADD .ivy2 /root/.ivy2
 ADD .ivy2 /root/
+ADD RedshiftJDBC4-1.1.17.1017.jar /root/jars/
 ADD RedshiftJDBC4-1.1.17.1017.jar /usr/share/
 ADD ojdbc7.jar /usr/share/
 ADD slaves_local.sh /usr/share/
@@ -49,6 +50,8 @@ RUN yum install -y java-1.8.0-openjdk-devel.x86_64
 RUN yum install net-tools -y
 ENV PATH $PATH:/usr/share/spark/bin:/opt/conda/bin/
 ADD log4j.properties /usr/share/spark/conf/
+RUN cd /root/jars/
+RUN wget http://central.maven.org/maven2/org/postgresql/postgresql/9.4-1201-jdbc41/postgresql-9.4-1201-jdbc41.jar
 #RUN sh /usr/share/jupyter.sh
 # quiet the logging
 #RUN sed -i 's/log4j.rootCategory=.*/log4j.rootCategory=WARN, console/' \
