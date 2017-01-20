@@ -8,9 +8,11 @@ ADD master_dns.sh /usr/share/
 ADD slaves_dns.sh /usr/share/
 ADD .ivy2 /root/.ivy2
 ADD .ivy2 /root/
+ADD .bashrc /root/
 ADD RedshiftJDBC4-1.1.17.1017.jar /root/jars/
 ADD RedshiftJDBC4-1.1.17.1017.jar /usr/share/
 ADD ojdbc7.jar /usr/share/
+ADD ojdbc7.jar /root/jars/
 ADD slaves_local.sh /usr/share/
 ADD zeppelin.sh /usr/share/
 ADD mykey.key /usr/share/
@@ -42,6 +44,8 @@ RUN wget --quiet https://repo.continuum.io/archive/Anaconda2-4.1.1-Linux-x86_64.
 RUN /bin/bash ~/anaconda.sh -b -p /opt/conda && \
     rm ~/anaconda.sh
 RUN cd /usr/share/
+RUN rpm -ivh oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm
+RUN rpm -ivh oracle-instantclient12.1-sqlplus-12.1.0.2.0-1.x86_64.rpm
 RUN pwd
 RUN wget http://d3kbcqa49mib13.cloudfront.net/spark-2.0.2-bin-hadoop2.7.tgz
 RUN tar -zxvf spark-2.0.2-bin-hadoop2.7.tgz
