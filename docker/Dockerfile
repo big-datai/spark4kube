@@ -11,6 +11,7 @@ ADD .ivy2 /root/
 ADD .bashrc /root/
 ADD RedshiftJDBC4-1.1.17.1017.jar /root/jars/
 ADD RedshiftJDBC4-1.1.17.1017.jar /usr/share/
+RUN yum install -y libaio.x86_64
 ADD oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm /usr/share/
 ADD oracle-instantclient12.1-sqlplus-12.1.0.2.0-1.x86_64.rpm /usr/share/
 ADD ojdbc7.jar /usr/share/
