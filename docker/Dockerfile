@@ -6,8 +6,6 @@ ADD master.sh /usr/share/
 ADD slaves.sh /usr/share/
 ADD master_dns.sh /usr/share/
 ADD slaves_dns.sh /usr/share/
-ADD .ivy2 /root/.ivy2
-ADD .ivy2 /root/
 ADD .bashrc /root/
 ADD RedshiftJDBC4-1.1.17.1017.jar /root/jars/
 ADD RedshiftJDBC4-1.1.17.1017.jar /usr/share/
