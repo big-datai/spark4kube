@@ -59,6 +59,8 @@ ENV PATH $PATH:/usr/share/spark/bin:/opt/conda/bin/
 ADD log4j.properties /usr/share/spark/conf/
 RUN cd /root/jars/
 RUN wget http://central.maven.org/maven2/org/postgresql/postgresql/9.4-1201-jdbc41/postgresql-9.4-1201-jdbc41.jar
+ADD sandbox-all.jar /usr/share/
+ADD spark-defaults.conf /usr/share/spark/conf/
 #RUN sh /usr/share/jupyter.sh
 # quiet the logging
 #RUN sed -i 's/log4j.rootCategory=.*/log4j.rootCategory=WARN, console/' \
