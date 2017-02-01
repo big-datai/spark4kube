@@ -48,7 +48,6 @@ RUN /bin/bash ~/anaconda.sh -b -p /opt/conda && \
 RUN cd /usr/share/
 RUN rpm -ivh oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm
 RUN rpm -ivh oracle-instantclient12.1-sqlplus-12.1.0.2.0-1.x86_64.rpm
-RUN pwd
 RUN wget http://d3kbcqa49mib13.cloudfront.net/spark-2.0.2-bin-hadoop2.7.tgz
 RUN tar -zxvf spark-2.0.2-bin-hadoop2.7.tgz
 RUN mv spark-2.0.2-bin-hadoop2.7 spark
@@ -59,7 +58,3 @@ ADD log4j.properties /usr/share/spark/conf/
 RUN cd /root/jars/
 RUN wget http://central.maven.org/maven2/org/postgresql/postgresql/9.4-1201-jdbc41/postgresql-9.4-1201-jdbc41.jar
 ADD spark-defaults.conf /usr/share/spark/conf/
-#RUN sh /usr/share/jupyter.sh
-# quiet the logging
-#RUN sed -i 's/log4j.rootCategory=.*/log4j.rootCategory=WARN, console/' \
-#     /usr/share/spark/conf/log4j.properties
