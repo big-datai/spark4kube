@@ -58,3 +58,9 @@ ADD log4j.properties /usr/share/spark/conf/
 RUN cd /root/jars/
 RUN wget http://central.maven.org/maven2/org/postgresql/postgresql/9.4-1201-jdbc41/postgresql-9.4-1201-jdbc41.jar
 ADD spark-defaults.conf /usr/share/spark/conf/
+RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+RUN python get-pip.py
+RUN pip install numpy
+RUN pip install scipy
+RUN pip install scikit-learn
+RUN pip install pandas
