@@ -51,10 +51,10 @@ RUN rpm -ivh oracle-instantclient12.1-sqlplus-12.1.0.2.0-1.x86_64.rpm
 RUN wget http://d3kbcqa49mib13.cloudfront.net/spark-2.0.2-bin-hadoop2.7.tgz
 RUN tar -zxvf spark-2.0.2-bin-hadoop2.7.tgz
 RUN mv spark-2.0.2-bin-hadoop2.7 spark
+#RUN yum install -y java-1.8.0-openjdk-devel.x86_64
 #RUN wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-linux-x64.rpm
 RUN wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u121-b13/e9e7ea248e2c4826b92b3f075a80e441/jdk-8u121-linux-x64.rpm
 RUN rpm -ivh jdk-8u121-linux-x64.rpm
-#RUN yum install -y java-1.8.0-openjdk-devel.x86_64
 RUN yum install net-tools -y
 ENV PATH $PATH:/usr/share/spark/bin:/opt/conda/bin/
 ADD log4j.properties /usr/share/spark/conf/
