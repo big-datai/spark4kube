@@ -2,8 +2,10 @@ FROM centos:latest
 MAINTAINER 2dmitrypavlov@gmail.com
 USER root
 WORKDIR /usr/share/
+ADD master_ip.sh /usr/share/
 ADD master.sh /usr/share/
 ADD slaves.sh /usr/share/
+ADD slaves_ip.sh /usr/share/
 ADD master_dns.sh /usr/share/
 ADD slaves_dns.sh /usr/share/
 ADD .bashrc /root/
