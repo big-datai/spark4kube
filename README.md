@@ -1,4 +1,6 @@
-#This is a kuberenetes docker image that runs spark and slaves on kube, each instance is a pod.  
+#This is a kuberenetes docker image that runs spark and slaves on kube, each instance is a pod.
+#It can be used as spark stand alone cluster, on docker containers when they are running on host ips.
+
 ##Installation instractions:  
 Download kube-deploy:   
 1. git clone https://github.com/kubernetes/kube-deploy.git  
@@ -81,5 +83,6 @@ docker build . -t dpavlov/spark:latest
 docker commit -m"updated spark to version 2.x"  
 docker push  
 ```
-
+#License
+This software is free for private and academic usage, but not commetcial, and we do not resposible for any issue with it or it may cause. To purchase commercial rights, please contact the owner.
 
