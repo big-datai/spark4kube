@@ -6,11 +6,11 @@ wget http://central.maven.org/maven2/org/apache/hadoop/hadoop-aws/2.6.0/hadoop-a
 wget http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.39/mysql-connector-java-5.1.39.jar
 wget https://github.com/s3tools/s3cmd/archive/master.zip
 
-wget http://www-eu.apache.org/dist/zeppelin/zeppelin-0.6.2/zeppelin-0.6.2-bin-all.tgz
-tar -zxvf zeppelin-0.6.2-bin-all.tgz
-cd zeppelin-0.6.2-bin-all/conf
+wget http://apache-mirror.rbc.ru/pub/apache/zeppelin/zeppelin-0.7.1/zeppelin-0.7.1-bin-all.tgz
+tar -zxvf zeppelin-0.7.1-bin-all.tgz
+cd zeppelin-0.7.1-bin-all.tgz/conf
 cp zeppelin-env.sh.template zeppelin-env.sh
-echo 'export MASTER=spark://spark-master:7077'>>zeppelin-env.sh
+echo 'export MASTER=spark://'$MASTERZ':7077'>>zeppelin-env.sh
 echo 'export SPARK_SUBMIT_OPTIONS="--jars /usr/share/mysql-connector-java-5.1.39.jar,/usr/share/aws-java-sdk-1.7.4.jar,/usr/share/hadoop-aws-2.6.0.jar"'>>zeppelin-env.sh
 #echo 'export ZEPPELIN_NOTEBOOK_STORAGE="org.apache.zeppelin.notebook.repo.VFSNotebookRepo, org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo"'>>zeppelin-env.sh
 #echo 'export ZEPPELINHUB_API_ADDRESS="https://www.zeppelinhub.com"'>>zeppelin-env.sh
