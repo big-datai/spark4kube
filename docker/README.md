@@ -1,18 +1,28 @@
-# Apache Spark base image for Docker
+##Distributed Spark on docker in stand alone mode 5 minutes and you have a distibuted cluster running
+## Install docker on ubuntu use the script :
+https://github.com/2dmitrypavlov/spark4kube/blob/master/ubuntuInstallDocker
+## Install docker on Centoes/ aws linux, run this script :
+https://github.com/2dmitrypavlov/rabbitmqSparkCassandra/blob/master/dockers/install-docker.sh
 
-This image is the base for master and worker images, and a CLI
-environment for interacting with a Spark cluster.
+# How to take cluster up
+Lets start master first, 0.0.0.0 is the master ip so every one can connect using private or public ip, if you want to allow only private ips then just substitude it with a private ip of the master.
 
-# Build
+* ```docker run -d -p 8080:8080 -p 7077:7077 -e MASTER=0.0.0.0 --net=host dpavlov/spark:latest /usr/share/slaves_ip.sh```
 
-* ```docker build -t <name>/spark-base .```
+Lets start slaves now, the first one on the same machine(if it is big enough), and run the same command on all host machines that we want to be a part of cluster, note that network must be open between machines
 
-# Use
+* ```docker run -d -p 8080:8080 -p 7077:7077 -e MASTER=10.0.0.12 --net=host dpavlov/spark:latest /usr/share/slaves_ip.sh```
 
-This assumes that the master knows itself as "spark-master"
+# Lets take Zeppelin up so we can access it, our cluster and use its computing power from a nice UI.
 
-* ```docker run -it <name>/spark-base sh```
-* ```export SPARK_LOCAL_HOSTNAME=$(hostname -i)```
-* ```echo "<IP OF MASTER> spark-master" >> /etc/hosts```
-* ```MASTER=spark://spark-master:7077 pyspark```
-* ```example program: import socket, resource; sc.parallelize(range(1000)).map(lambda x: (socket.gethostname(), resource.getrlimit(resource.RLIMIT_NOFILE))).distinct().collect()```
+
+## Build docker if you need changes like spark version (not needed as image is pre build in hub.docker)
+https://hub.docker.com/r/dpavlov/spark/
+###Build the image localy
+
+docker build -t dpavlov/spark:latest .
+
+### Login to docker hub to push your local changes to your hub.docker.com repo
+docker login
+
+docker push dpavlov/spark
