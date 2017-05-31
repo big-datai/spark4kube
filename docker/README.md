@@ -15,7 +15,7 @@ Lets start slaves now, the first one on the same machine(if it is big enough), a
 
 # Lets take Zeppelin up so we can access it, our cluster and use its computing power from a nice UI.
 
-docker run 8080:9995 -e MASTERZ=52.202.173.248 --net=host dpavlov/spark:latest /usr/share/zeppelin.sh
+docker run -d -p 8080:8080 -e MASTERZ=52.202.173.248 --net=host dpavlov/spark:latest /usr/share/zeppelin.sh
 
 ## Build docker if you need changes like spark version (not needed as image is pre build in hub.docker)
 https://hub.docker.com/r/dpavlov/spark/
