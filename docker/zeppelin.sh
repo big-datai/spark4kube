@@ -18,4 +18,4 @@ echo 'export ZEPPELIN_PORT=9995'>>zeppelin-env.sh
 cd ../bin/
 ./zeppelin-daemon.sh start
 
-tail -F /usr/share/zeppelin-0.7.1-bin-all/logs*
+tail -F /usr/share/zeppelin-0.7.1-bin-all/logs/*out
