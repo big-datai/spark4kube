@@ -44,9 +44,9 @@ RUN wget http://central.maven.org/maven2/com/databricks/spark-redshift_2.11/2.0.
 RUN wget http://central.maven.org/maven2/org/postgresql/postgresql/9.4-1201-jdbc41/postgresql-9.4-1201-jdbc41.jar
 RUN wget http://central.maven.org/maven2/com/eclipsesource/minimal-json/minimal-json/0.9.4/minimal-json-0.9.4.jar
 #RUN openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mykey.key -out mycert.pem
-RUN wget --quiet https://repo.continuum.io/archive/Anaconda2-4.1.1-Linux-x86_64.sh -O ~/anaconda.sh
-RUN /bin/bash ~/anaconda.sh -b -p /opt/conda && \
-    rm ~/anaconda.sh
+#RUN wget --quiet https://repo.continuum.io/archive/Anaconda2-4.1.1-Linux-x86_64.sh -O ~/anaconda.sh
+#RUN /bin/bash ~/anaconda.sh -b -p /opt/conda && \
+#    rm ~/anaconda.sh
 RUN cd /usr/share/
 RUN rpm -ivh oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm
 RUN rpm -ivh oracle-instantclient12.1-sqlplus-12.1.0.2.0-1.x86_64.rpm
@@ -59,7 +59,7 @@ ENV PATH $PATH:/usr/share/spark/bin:/opt/conda/bin/
 ADD log4j.properties /usr/share/spark/conf/
 RUN cd /root/jars/
 RUN wget http://central.maven.org/maven2/org/postgresql/postgresql/9.4-1201-jdbc41/postgresql-9.4-1201-jdbc41.jar
-ADD spark-defaults.conf /usr/share/spark/conf/
+#ADD spark-defaults.conf /usr/share/spark/conf/
 RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
 RUN python get-pip.py
 RUN pip install numpy
