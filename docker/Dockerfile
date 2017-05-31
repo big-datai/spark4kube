@@ -34,7 +34,7 @@ RUN yum install -y zsh
 RUN yum install -y wget bzip2 git
 RUN yum install openssl.x86_64 -y
 RUN wget https://github.com/s3tools/s3cmd/archive/master.zip
-RUN wget https://s3.amazonaws.com/cxa-redshift-dev/spark_jars/sandbox-all.jar
+#RUN wget https://s3.amazonaws.com/cxa-redshift-dev/spark_jars/sandbox-all.jar
 RUN wget http://central.maven.org/maven2/com/amazonaws/aws-java-sdk/1.7.4/aws-java-sdk-1.7.4.jar
 RUN wget http://central.maven.org/maven2/org/apache/hadoop/hadoop-aws/2.7.1/hadoop-aws-2.7.1.jar
 RUN wget http://central.maven.org/maven2/org/apache/hadoop/hadoop-aws/2.6.0/hadoop-aws-2.6.0.jar
@@ -59,10 +59,13 @@ ENV PATH $PATH:/usr/share/spark/bin:/opt/conda/bin/
 ADD log4j.properties /usr/share/spark/conf/
 RUN cd /root/jars/
 RUN wget http://central.maven.org/maven2/org/postgresql/postgresql/9.4-1201-jdbc41/postgresql-9.4-1201-jdbc41.jar
+# Uncomment for adding jars, so disk will not explode of multiple jars copied, usually build one uber jar 
+# like in the example
 #ADD spark-defaults.conf /usr/share/spark/conf/
-RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
-RUN python get-pip.py
-RUN pip install numpy
-RUN pip install scipy
-RUN pip install scikit-learn
-RUN pip install pandas
+# Enable for using python and ML on it
+#RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+#RUN python get-pip.py
+#RUN pip install numpy
+#RUN pip install scipy
+#RUN pip install scikit-learn
+#RUN pip install pandas
