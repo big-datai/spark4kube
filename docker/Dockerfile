@@ -57,7 +57,8 @@ RUN yum install -y java-1.8.0-openjdk-devel.x86_64
 RUN yum install net-tools -y
 ENV PATH $PATH:/usr/share/spark/bin:/opt/conda/bin/
 ADD log4j.properties /usr/share/spark/conf/
-RUN cd /root/jars/
+RUN mv *.jar /root/jars/
+RUN rm -rf *tgz
 #RUN wget http://central.maven.org/maven2/org/postgresql/postgresql/9.4-1201-jdbc41/postgresql-9.4-1201-jdbc41.jar
 # Uncomment for adding jars, so disk will not explode of multiple jars copied, usually build one uber jar 
 # like in the example
