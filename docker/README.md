@@ -7,7 +7,7 @@ https://github.com/2dmitrypavlov/rabbitmqSparkCassandra/blob/master/dockers/inst
 # How to take cluster up
 Lets start master first, 0.0.0.0 is the master ip so every one can connect using private or public ip, if you want to allow only private ips then just substitude it with a private ip of the master.
 
-* ```docker run -d -p 8080:8080 -p 7077:7077 -e MASTER=0.0.0.0 --net=host dpavlov/spark:latest /usr/share/slaves_ip.sh```
+* ```docker run -d -p 8080:8080 -p 7077:7077 -e MASTER=0.0.0.0 --net=host dpavlov/spark:latest /usr/share/master_ip.sh```
 
 Lets start slaves now, the first one on the same machine(if it is big enough), and run the same command on all host machines that we want to be a part of cluster, note that network must be open between machines
 
