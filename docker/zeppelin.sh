@@ -8,7 +8,7 @@ wget http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.39/mysql-con
 #wget https://github.com/s3tools/s3cmd/archive/master.zip
 
 cd /usr/share/
-wget http://apache-mirror.rbc.ru/pub/apache/zeppelin/zeppelin-0.7.1/zeppelin-0.7.1-bin-all.tgz
+wget http://archive.apache.org/dist/zeppelin/zeppelin-0.7.1/zeppelin-0.7.1-bin-all.tgz
 tar -zxvf zeppelin-0.7.1-bin-all.tgz
 cd zeppelin-0.7.1-bin-all/conf
 #cp zeppelin-env.sh.template zeppelin-env.sh
