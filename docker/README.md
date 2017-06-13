@@ -11,7 +11,7 @@ Lets start master first, 0.0.0.0 is the master ip so every one can connect using
 
 Lets start slaves now, the first one on the same machine(if it is big enough), and run the same command on all host machines that we want to be a part of cluster, note that network must be open between machines
 
-* ```docker run -d  -p 4040:4040 -p 4041:4041 -p 8080:8080 -p 7077:7077 -e MASTER=10.0.0.12 --net=host dpavlov/spark:latest /usr/share/slaves_ip.sh```
+* ```docker run -d  -p 4040:4040 -p 4041:4041 -p 8080:8080 -p 7077:7077 -e MASTER=52.202.173.248 --net=host dpavlov/spark:latest /usr/share/slaves_ip.sh```
 
 # Lets take Zeppelin up so we can access it, our cluster and use its computing power from a nice UI.
 
