@@ -7,15 +7,15 @@ https://github.com/2dmitrypavlov/rabbitmqSparkCassandra/blob/master/dockers/inst
 # How to take cluster up
 Lets start master first, 0.0.0.0 is the master ip so every one can connect using private or public ip, if you want to allow only private ips then just substitude it with a private ip of the master.
 
-* ```docker run -d -p 8080:8080 -p 7077:7077 -e MASTER=0.0.0.0 --net=host dpavlov/spark:latest /usr/share/master_ip.sh```
+* ```docker run -d -p 4040:4040 -p 4041:4041 -p 8080:8080 -p 7077:7077 -e MASTER=0.0.0.0 --net=host dpavlov/spark:latest /usr/share/master_ip.sh```
 
 Lets start slaves now, the first one on the same machine(if it is big enough), and run the same command on all host machines that we want to be a part of cluster, note that network must be open between machines
 
-* ```docker run -d -p 8080:8080 -p 7077:7077 -e MASTER=10.0.0.12 --net=host dpavlov/spark:latest /usr/share/slaves_ip.sh```
+* ```docker run -d  -p 4040:4040 -p 4041:4041 -p 8080:8080 -p 7077:7077 -e MASTER=10.0.0.12 --net=host dpavlov/spark:latest /usr/share/slaves_ip.sh```
 
 # Lets take Zeppelin up so we can access it, our cluster and use its computing power from a nice UI.
 
-docker run -d -p 8080:8080 -p9999:9999 -e MASTERZ=52.202.173.248 --net=host dpavlov/spark:latest /usr/share/zeppelin.sh
+docker run -d  -p 4040:4040 -p 4041:4041 -p 8080:8080 -p9999:9999 -e MASTERZ=52.202.173.248 --net=host dpavlov/spark:latest /usr/share/zeppelin.sh
 
 ## Build docker if you need changes like spark version (not needed as image is pre build in hub.docker)
 https://hub.docker.com/r/dpavlov/spark/
