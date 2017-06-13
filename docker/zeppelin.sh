@@ -17,6 +17,7 @@ cd zeppelin-0.7.1-bin-all/conf
 #echo 'export ZEPPELIN_NOTEBOOK_STORAGE="org.apache.zeppelin.notebook.repo.VFSNotebookRepo, org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo"'>>zeppelin-env.sh
 #echo 'export ZEPPELINHUB_API_ADDRESS="https://www.zeppelinhub.com"'>>zeppelin-env.sh
 #echo 'export ZEPPELIN_PORT=9999'>>zeppelin-env.sh
+#echo 'export SPARK_HOME=/usr/share/spark'>>zeppelin-env.sh
 cd ../bin/
 ./zeppelin-daemon.sh restart
 
