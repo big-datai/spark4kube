@@ -8,9 +8,9 @@ wget http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.39/mysql-con
 #wget https://github.com/s3tools/s3cmd/archive/master.zip
 
 cd /usr/share/
-wget http://archive.apache.org/dist/zeppelin/zeppelin-0.7.0/zeppelin-0.7.0-bin-all.tgz
-tar -zxvf zeppelin-0.7.0-bin-all.tgz
-cd zeppelin-0.7.0-bin-all/conf
+wget http://archive.apache.org/dist/zeppelin/zeppelin-0.7.1/zeppelin-0.7.1-bin-all.tgz
+tar -zxvf zeppelin-0.7.1-bin-all.tgz
+cd zeppelin-0.7.1-bin-all/conf
 cp zeppelin-env.sh.template zeppelin-env.sh
 echo 'export MASTER=spark://'$MASTERZ':7077'>>zeppelin-env.sh
 echo 'export SPARK_SUBMIT_OPTIONS="--jars /root/jars/mysql-connector-java-5.1.39.jar,/root/jars/aws-java-sdk-1.7.4.jar,/root/jars/hadoop-aws-2.6.0.jar"'>>zeppelin-env.sh
