@@ -70,3 +70,6 @@ RUN rm -rf *tgz
 #RUN pip install scipy
 #RUN pip install scikit-learn
 #RUN pip install pandas
+RUN echo "* soft nofile 65000">>/etc/security/limits.conf
+RUN echo "* hard nofile 65000">>/etc/security/limits.conf
+RUN echo "fs.file-max = 100000">>/etc/sysctl.conf
