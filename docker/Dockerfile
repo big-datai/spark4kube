@@ -73,5 +73,5 @@ RUN rm -rf *tgz
 RUN echo "* soft nofile 65000">>/etc/security/limits.conf
 RUN echo "* hard nofile 65000">>/etc/security/limits.conf
 RUN echo "fs.file-max = 100000">>/etc/sysctl.conf
-RUN yum install htop -y
+#RUN yum install htop -y
 RUN ulimit -n 65000
