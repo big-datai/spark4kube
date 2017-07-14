@@ -21,7 +21,8 @@ ENV PATH $PATH:/usr/share/spark/bin
 #  && yum install -y git \
 #  && yum install -y java-1.8.0-openjdk-devel.x86_64\
 #  && yum install -y openssl.x86_64
- RUN yum install -y java-1.8.0-openjdk-devel.x86_64
+ RUN yum install -y java-1.8.0-openjdk-devel.x86_64 \
+ && yum install -y wget
 # RUN wget https://github.com/s3tools/s3cmd/archive/master.zip \
 # && wget http://central.maven.org/maven2/com/amazonaws/aws-java-sdk/1.7.4/aws-java-sdk-1.7.4.jar \
 # && wget http://central.maven.org/maven2/org/apache/hadoop/hadoop-aws/2.7.1/hadoop-aws-2.7.1.jar \
@@ -41,8 +42,8 @@ RUN wget https://d3kbcqa49mib13.cloudfront.net/spark-2.1.1-bin-hadoop2.7.tgz\
 && mkdir /usr/share/spark/ \
 && tar -zxvf spark-2.1.1-bin-hadoop2.7.tgz \
 # && mv spark-2.1.1-bin-hadoop2.7 spark \
-# && yum install net-tools -y \
-# && mv log4j.properties /usr/share/spark/conf/
+&& yum install net-tools -y \
+&& mv log4j.properties /usr/share/spark/conf/
 
 #RUN 
 # Uncomment for adding jars, so disk will not explode of multiple jars copied, usually build one uber jar 
