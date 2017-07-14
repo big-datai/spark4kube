@@ -2,15 +2,14 @@ FROM centos:latest
 MAINTAINER 2dmitrypavlov@gmail.com
 USER root
 WORKDIR /usr/share/
-COPY jupyter.sh zeppelin.sh mykey.key mycert.pem master_ip.sh master.sh slaves.sh slaves_ip.sh master_dns.sh slaves_dns.sh .bashrc oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm oracle-instantclient12.1-sqlplus-12.1.0.2.0-1.x86_64.rpm /usr/share/
-COPY RedshiftJDBC4-1.1.17.1017.jar RedshiftJDBC4-1.1.17.1017.jar ojdbc7.jar /root/jars/
+COPY RedshiftJDBC4-1.1.17.1017.jar RedshiftJDBC4-1.1.17.1017.jar ojdbc7.jar log4j.properties jupyter.sh zeppelin.sh mykey.key mycert.pem master_ip.sh master.sh slaves.sh slaves_ip.sh master_dns.sh slaves_dns.sh .bashrc oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm oracle-instantclient12.1-sqlplus-12.1.0.2.0-1.x86_64.rpm /usr/share/
+ENV PATH $PATH:/usr/share/spark/bin
 
-RUN mkdir /root/.jupyter
-ADD jupyter_notebook_config.py /root/.jupyter
-
-RUN chmod 600 mykey.key mycert.pem
-
-RUN export TERM=xterm \
+#RUN mkdir /root/.jupyter
+#ADD jupyter_notebook_config.py /root/.jupyter
+#RUN chmod 600 mykey.key mycert.pem
+RUN mv /usr/share/*jar  /root/jars/ \
+&& export TERM=xterm \
 && yum install -y libaio.x86_64 \
 && yum clean all -y \
  && yum update -y \
@@ -20,7 +19,8 @@ RUN export TERM=xterm \
  && yum install -y zsh \
  && yum install -y wget \
  && yum install -y bzip2 \
- && yum insatll -y git \
+ && yum install -y git \
+ && yum install -y java-1.8.0-openjdk-devel.x86_64\
  && yum install -y openssl.x86_64
 #RUN wget https://github.com/s3tools/s3cmd/archive/master.zip
 #RUN wget https://s3.amazonaws.com/cxa-redshift-dev/spark_jars/sandbox-all.jar
@@ -42,10 +42,11 @@ RUN export TERM=xterm \
 RUN wget https://d3kbcqa49mib13.cloudfront.net/spark-2.1.1-bin-hadoop2.7.tgz\
 && tar -zxvf spark-2.1.1-bin-hadoop2.7.tgz \
 && mv spark-2.1.1-bin-hadoop2.7 spark \
-&& yum install -y java-1.8.0-openjdk-devel.x86_64\
 && yum install net-tools -y \
-ENV PATH $PATH:/usr/share/spark/bin:/opt/conda/bin/
-ADD log4j.properties /usr/share/spark/conf/
+&& mv log4j.properties /usr/share/spark/conf/
+
+#:/opt/conda/bin/
+
 #RUN mv *.jar /root/jars/
 #RUN rm -rf *tgz
 #RUN wget http://central.maven.org/maven2/org/postgresql/postgresql/9.4-1201-jdbc41/postgresql-9.4-1201-jdbc41.jar
