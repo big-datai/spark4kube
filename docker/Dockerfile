@@ -33,7 +33,6 @@ RUN wget https://github.com/s3tools/s3cmd/archive/master.zip \
 && wget http://central.maven.org/maven2/org/postgresql/postgresql/9.4-1201-jdbc41/postgresql-9.4-1201-jdbc41.jar
 
 RUN wget https://d3kbcqa49mib13.cloudfront.net/spark-2.1.1-bin-hadoop2.7.tgz\
-&& mkdir /usr/share/spark/ \
 && tar -zxvf spark-2.1.1-bin-hadoop2.7.tgz \
 && mv spark-2.1.1-bin-hadoop2.7 spark \
 && yum install net-tools -y \
