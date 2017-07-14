@@ -16,4 +16,4 @@ echo 'export ZEPPELIN_PORT=9999'>>zeppelin-env.sh
 echo 'export SPARK_HOME=/usr/share/spark'>>zeppelin-env.sh
 
 cd ../bin/
-./zeppelin-daemon.sh restart
+./zeppelin.sh
