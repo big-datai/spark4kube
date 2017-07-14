@@ -28,7 +28,7 @@ RUN chmod 600 mykey.key mycert.pem
 RUN export TERM=xterm \
 && yum clean all -y \
  && yum update -y \
- && yum install -y vim
+ && yum install -y vim \
  && yum install -y bind-utils \
  && yum install -y yum-utils \
  && yum install -y zsh \
