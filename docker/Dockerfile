@@ -8,7 +8,8 @@ ENV PATH $PATH:/usr/share/spark/bin
 #RUN mkdir /root/.jupyter
 #ADD jupyter_notebook_config.py /root/.jupyter
 #RUN chmod 600 mykey.key mycert.pem
-RUN mv /usr/share/*jar  /root/jars/ \
+RUN mkdir /root/jars/ \
+&& mv /usr/share/*jar  /root/jars/  \
 && export TERM=xterm \
 && yum install -y libaio.x86_64 \
 && yum clean all -y \
