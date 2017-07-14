@@ -41,8 +41,8 @@ RUN wget https://d3kbcqa49mib13.cloudfront.net/spark-2.1.1-bin-hadoop2.7.tgz\
 && mkdir /usr/share/spark/ \
 && tar -zxvf spark-2.1.1-bin-hadoop2.7.tgz \
 && mv spark-2.1.1-bin-hadoop2.7 spark \
-&& yum install net-tools -y \
-&& mv log4j.properties /usr/share/spark/conf/
+&& yum install net-tools -y 
+# && mv log4j.properties /usr/share/spark/conf/
 
 #RUN 
 # Uncomment for adding jars, so disk will not explode of multiple jars copied, usually build one uber jar 
