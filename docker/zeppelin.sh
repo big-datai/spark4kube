@@ -1,11 +1,7 @@
 #!/bin/bash
 # Download jars
 cd /root/jars
-wget http://central.maven.org/maven2/com/amazonaws/aws-java-sdk/1.7.4/aws-java-sdk-1.7.4.jar
-wget http://central.maven.org/maven2/org/apache/hadoop/hadoop-aws/2.7.1/hadoop-aws-2.7.1.jar
-wget http://central.maven.org/maven2/org/apache/hadoop/hadoop-aws/2.6.0/hadoop-aws-2.6.0.jar
 wget http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.39/mysql-connector-java-5.1.39.jar
-#wget https://github.com/s3tools/s3cmd/archive/master.zip
 
 cd /usr/share/
 wget http://archive.apache.org/dist/zeppelin/zeppelin-0.7.1/zeppelin-0.7.1-bin-all.tgz
@@ -21,5 +17,3 @@ echo 'export SPARK_HOME=/usr/share/spark'>>zeppelin-env.sh
 
 cd ../bin/
 ./zeppelin-daemon.sh restart
-
-tail -F /usr/share/zeppelin-0.7.1-bin-all/logs/*out
