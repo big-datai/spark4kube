@@ -32,16 +32,6 @@ RUN wget https://github.com/s3tools/s3cmd/archive/master.zip \
 && wget http://central.maven.org/maven2/com/eclipsesource/minimal-json/minimal-json/0.9.4/minimal-json-0.9.4.jar \
 && wget http://central.maven.org/maven2/org/postgresql/postgresql/9.4-1201-jdbc41/postgresql-9.4-1201-jdbc41.jar
 
-# Enable to use jupyter notebook
-#RUN mkdir /root/.jupyter
-#ADD jupyter_notebook_config.py /root/.jupyter
-#RUN chmod 600 mykey.key mycert.pem
-#RUN openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mykey.key -out mycert.pem
-#RUN wget --quiet https://repo.continuum.io/archive/Anaconda2-4.1.1-Linux-x86_64.sh -O ~/anaconda.sh
-#RUN /bin/bash ~/anaconda.sh -b -p /opt/conda && \
-#    rm ~/anaconda.sh
-#RUN cd /usr/share/
-
 # Oracle install
 #RUN rpm -ivh oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm
 #RUN rpm -ivh oracle-instantclient12.1-sqlplus-12.1.0.2.0-1.x86_64.rpm
@@ -53,11 +43,20 @@ RUN wget https://d3kbcqa49mib13.cloudfront.net/spark-2.1.1-bin-hadoop2.7.tgz\
 && yum install net-tools -y \
 && mv log4j.properties /usr/share/spark/conf/
 
-
 #RUN 
 # Uncomment for adding jars, so disk will not explode of multiple jars copied, usually build one uber jar 
 # like in the example
 #ADD spark-defaults.conf /usr/share/spark/conf/
+
+# Enable to use jupyter notebook
+#RUN mkdir /root/.jupyter
+#ADD jupyter_notebook_config.py /root/.jupyter
+#RUN chmod 600 mykey.key mycert.pem
+#RUN openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mykey.key -out mycert.pem
+#RUN wget --quiet https://repo.continuum.io/archive/Anaconda2-4.1.1-Linux-x86_64.sh -O ~/anaconda.sh
+#RUN /bin/bash ~/anaconda.sh -b -p /opt/conda && \
+#    rm ~/anaconda.sh
+#RUN cd /usr/share/
 
 # Enable for using python and ML on it
 #RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
