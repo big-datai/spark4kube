@@ -38,6 +38,7 @@ ENV PATH $PATH:/usr/share/spark/bin
 #:/opt/conda/bin/
 
 RUN wget https://d3kbcqa49mib13.cloudfront.net/spark-2.1.1-bin-hadoop2.7.tgz\
+&& mkdir /usr/share/spark/ \
 && tar -zxvf spark-2.1.1-bin-hadoop2.7.tgz \
 && mv spark-2.1.1-bin-hadoop2.7 spark \
 && yum install net-tools -y \
