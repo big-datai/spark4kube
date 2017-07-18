@@ -30,13 +30,14 @@ RUN wget https://github.com/s3tools/s3cmd/archive/master.zip \
 && wget http://central.maven.org/maven2/com/databricks/spark-redshift_2.11/2.0.1/spark-redshift_2.11-2.0.1.jar \
 && wget http://central.maven.org/maven2/org/postgresql/postgresql/9.4-1201-jdbc41/postgresql-9.4-1201-jdbc41.jar \
 && wget http://central.maven.org/maven2/com/eclipsesource/minimal-json/minimal-json/0.9.4/minimal-json-0.9.4.jar \
-&& wget http://central.maven.org/maven2/org/postgresql/postgresql/9.4-1201-jdbc41/postgresql-9.4-1201-jdbc41.jar
+
 
 RUN wget https://d3kbcqa49mib13.cloudfront.net/spark-2.1.1-bin-hadoop2.7.tgz\
 && tar -zxvf spark-2.1.1-bin-hadoop2.7.tgz \
 && mv spark-2.1.1-bin-hadoop2.7 spark \
 && yum install net-tools -y \
 && mv log4j.properties /usr/share/spark/conf/ \
+&& mv *jar /root/jars \
 && rm -rf *jar *rpm *tgz\
 
 # Oracle install
