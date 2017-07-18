@@ -2,7 +2,7 @@ FROM centos:latest
 MAINTAINER 2dmitrypavlov@gmail.com
 USER root
 WORKDIR /usr/share/
-COPY RedshiftJDBC4-1.1.17.1017.jar RedshiftJDBC4-1.1.17.1017.jar ojdbc7.jar log4j.properties jupyter.sh zeppelin.sh mykey.key mycert.pem master_ip.sh master.sh slaves.sh slaves_ip.sh master_dns.sh slaves_dns.sh .bashrc oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm oracle-instantclient12.1-sqlplus-12.1.0.2.0-1.x86_64.rpm /usr/share/
+COPY RedshiftJDBC4-1.1.17.1017.jar RedshiftJDBC4-1.1.17.1017.jar ojdbc7.jar log4j.properties jupyter.sh zeppelin.sh mykey.key mycert.pem master_ip.sh slaves_ip.sh master_dns.sh slaves_dns.sh .bashrc oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm oracle-instantclient12.1-sqlplus-12.1.0.2.0-1.x86_64.rpm /usr/share/
 ENV PATH $PATH:/usr/share/spark/bin
 
 
